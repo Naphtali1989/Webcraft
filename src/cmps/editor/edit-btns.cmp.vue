@@ -1,6 +1,6 @@
 <template>
-    <section class="add-btns">
-        <h1>This is add mode</h1>
+    <section class="edit-btns">
+        <h1>This is edit mode</h1>
     </section>
 </template>
 

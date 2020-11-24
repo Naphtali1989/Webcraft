@@ -1,11 +1,15 @@
 <template>
     <section class="editor-container">
-        <h1>This is the main Editor</h1>
+        <editor-dashboard />
     </section>
 </template>
 
 <script>
+import editorDashboard from '@/cmps/editor/editor-dashboard.cmp.vue';
 export default {
-    name: "editor",
+    name: 'editor',
+    components: {
+        editorDashboard,
+    },
 };
 </script>
