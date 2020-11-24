@@ -3,18 +3,19 @@
         <h1>We are in text mode</h1>
         <my-select :options="fonts" />
         <p class="text-editor-txt">Font Size</p>
-        <input type="range" min="1" max="72" />
+        <my-range />
         <p class="text-editor-txt">Line Height</p>
-        <input type="range" min="1" max="15" />
+        <my-range />
         <p class="text-editor-txt">Letter Spacing</p>
-        <input type="range" min="1" max="30" />
+        <my-range />
     </section>
 </template>
 
 <script>
-import mySelect from "@/cmps/custum-cmps/my-select.cmp.vue"
+import mySelect from '@/cmps/custum-cmps/my-select.cmp.vue';
+import myRange from '@/cmps/custum-cmps/my-range.cmp.vue';
 export default {
-    name: 'text-editor',
+    name: 'text-controls',
     data() {
         return {
             fonts: [{
@@ -35,9 +36,9 @@ export default {
             },],
         }
     },
-
     components: {
-        mySelect
+        mySelect,
+        myRange
     }
 }
 </script>

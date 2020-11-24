@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import textEditor from '@/cmps/editor/text-editor.cmp.vue'
+import textControls from '@/cmps/editor/controls/text-controls.cmp.vue'
 export default {
     name: 'add-btns',
     data() {
@@ -22,11 +22,11 @@ export default {
     },
     computed: {
         editorName() {
-            return this.currEditor + '-editor'
+            return this.currEditor + '-controls'
         }
     },
     components: {
-        textEditor
+        textControls
     }
 }
 </script>
