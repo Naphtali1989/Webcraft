@@ -34,7 +34,6 @@ export default {
         if (this.template.imgUrl || this.template.vidUrl){
             this.$el.src = this.urlSrc
         }
-
     },
     computed:{
         urlSrc(){
