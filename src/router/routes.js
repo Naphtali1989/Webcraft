@@ -3,7 +3,7 @@ import vueRouter from 'vue-router';
 
 import homePage from '@/views/home.cmp.vue';
 import editor from '@/views/editor.cmp.vue';
-import templateGallery from '@/views/template-gallery.cmp.vue';
+import wapPage from '@/views/wap-page.cmp.vue';
 import userProfile from '@/views/user-profile.cmp.vue';
 import wap from '@/views/wap.cmp.vue';
 
@@ -18,8 +18,8 @@ const routes = [{
         component: editor
     },
     {
-        path: '/template',
-        component: templateGallery
+        path: '/wap',
+        component: wapPage
     },
     {
         path: '/user/:id',

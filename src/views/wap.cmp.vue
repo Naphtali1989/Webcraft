@@ -3,8 +3,8 @@
 </template>
 
 <script>
-import wapRenderer from '@/cmps/wap-renderer.cmp.vue';
-import { templateService } from '@/services/template.service'
+import wapRenderer from '@/cmps/wap/wap-renderer.cmp.vue';
+import { wapService } from '@/services/wap.service'
 
 export default {
     name: 'userWebsite',
