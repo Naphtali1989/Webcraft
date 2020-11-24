@@ -2,16 +2,10 @@
     <section class="editor-dashboard">
         <section class="editor-nav flex">
             <div class="tab-container">
-                <button v-for="tab in tabs" :key="tab" @click="toggleTabs(tab)">
+                <button v-for="tab in tabs" :key="tab" @click="toggleTabs(tab)" :class="{selected: currTab === tab}" class="tab-item">
                     {{tab}}
                 </button>
             </div>
-            <!-- <div class="nav-item" :class="editMode" @click="currentTab='add'">
-                Add
-            </div>
-            <div class="nav-item" :class="addMode" @click="currentTab='edit'">
-                Edit
-            </div> -->
             <!-- clicking a button will highlight it  -->
         </section>
         <section class="editor-body">
@@ -40,15 +34,13 @@ export default {
         },
     },
     computed: {
-        editMode() {
-            return { selected: this.isEditMode };
-        },
-        addMode() {
-            return { selected: !this.isEditMode };
+        selectedTab(tabName) {
+            console.log('tabname:',tabName);
+            return { selected: this.currTab===tabName }
         },
         currDashboard() {
             if(this.currTab==='edit') return 'edit-btns';
-            else return 'add-btns'
+            return 'add-btns'
         }
     },
     components: {
@@ -58,6 +50,21 @@ export default {
 }
 </script>
 <style lang="scss">
+.tab-container {
+    display: flex;
+    button {
+        font-family: cursive;
+        width: 50%;
+        padding: 0.5rem 1rem;
+        background: transparent;
+        border: 0;
+        outline: 0;
+
+        &.selected {
+            background: red;
+        }
+    }
+}
 .nav-item {
     margin-block-start: 10px;
 }
