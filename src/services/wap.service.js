@@ -1,4 +1,4 @@
-export const templateService = {
+export const wapService = {
     getWap
 }
 

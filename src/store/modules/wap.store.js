@@ -1,4 +1,4 @@
-export const templateStore = {
+export const wapStore = {
     state: {},
     getters: {},
     mutations: {},

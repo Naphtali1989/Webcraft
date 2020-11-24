@@ -84,7 +84,7 @@ export default {
     },
     async mounted() {
         console.log(this)
-        const website = await templateService.getWap(this);
+        const website = await wapService.getWap(this);
         console.log('Let us see what we get!', website)
     },
     components: {
