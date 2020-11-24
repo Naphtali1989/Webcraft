@@ -1,0 +1,15 @@
+    .wap-preview {
+        text-align: center;
+        background: gainsboro;
+        box-shadow: 0 0 4px black;
+        border-radius: 5px;
+        width: 250px;
+        height: 350px;
+        max-height: 380px;
+        font-size: 1.2rem;
+        position: relative;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
