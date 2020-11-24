@@ -7,11 +7,12 @@
 
 <script>
 import textControls from '@/cmps/editor/controls/text-controls.cmp.vue'
+import sectionControls from '@/cmps/editor/controls/section-controls.cmp.vue'
 export default {
     name: 'add-btns',
     data() {
         return {
-            currEditor: 'text',
+            currEditor: 'section',
             editors: [
                 'text',
                 'section',
@@ -26,7 +27,8 @@ export default {
         }
     },
     components: {
-        textControls
+        textControls,
+        sectionControls
     }
 }
 </script>

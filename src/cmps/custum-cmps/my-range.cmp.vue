@@ -1,24 +1,22 @@
 <template>
     <div class="block">
-    <span class="demonstration">Customized initial value</span>
-    <el-slider v-model="value"></el-slider>
-  </div>
+        <el-slider :max="options.max" :min="options.min" v-model="value"></el-slider>
+    </div>
 </template>
 
 <script>
 export default {
-    props:{
-        options:Array
+    props: {
+        options: Object
     },
     data() {
         return {
-            value: ''
+            value: this.options.initVal
         }
     },
 
-    methods:{
-
-        emitChange(){
+    methods: {
+        emitChange() {
             this.$emit('change', this.value)
         }
     }

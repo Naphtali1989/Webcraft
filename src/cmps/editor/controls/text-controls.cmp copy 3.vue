@@ -1,11 +1,11 @@
 <template>
     <section class="text-editor">
         <my-select :options="fonts" />
-        <p class="editor-txt">Font Size</p>
+        <p class="text-editor-txt">Font Size</p>
         <my-range :options="{ initVal: 16, min: 1, max: 72 }" />
-        <p class="editor-txt">Line Height</p>
+        <p class="text-editor-txt">Line Height</p>
         <my-range :options="{ initVal: 4, min: 1, max: 15 }" />
-        <p class="editor-txt">Letter Spacing</p>
+        <p class="text-editor-txt">Letter Spacing</p>
         <my-range :options="{ initVal: 10, min: 1, max: 30 }" />
         <div class="align-controls">
             <button class="btn align-btn">
@@ -29,7 +29,7 @@
                 <i class="fas fa-bold"></i>
             </button>
         </div>
-        <p class="editor-txt">Background Color</p>
+        <p class="text-editor-txt">Background Color</p>
         <color-picker />
     </section>
 </template>
