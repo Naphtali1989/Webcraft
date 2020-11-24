@@ -1,5 +1,6 @@
 <template>
     <section class="gallery">
+        <slot></slot>
         <h1>This is a gallery</h1>
     </section>
 </template>

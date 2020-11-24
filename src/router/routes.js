@@ -5,6 +5,7 @@ import homePage from '@/views/home.cmp.vue';
 import editor from '@/views/editor.cmp.vue';
 import wapPage from '@/views/wap-page.cmp.vue';
 import userProfile from '@/views/user-profile.cmp.vue';
+import playGround from '@/views/playground.cmp.vue';
 import wap from '@/views/wap.cmp.vue';
 
 vue.use(vueRouter);
@@ -24,6 +25,10 @@ const routes = [{
     {
         path: '/user/:id',
         component: userProfile
+    },
+    {
+        path: '/playground',
+        component: playGround
     },
     {
         path: '/:id',

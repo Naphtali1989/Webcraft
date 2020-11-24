@@ -1,5 +1,6 @@
 <template>
     <section>
+        <slot></slot>
         <h1>Form picker</h1>
     </section>
 </template>

@@ -1,5 +1,6 @@
 <template>
     <section class="cards-picker">
+        <slot></slot>
         <h1>This is cards picker</h1>
     </section>
 </template>

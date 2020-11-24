@@ -1,5 +1,9 @@
 <template>
-    <h1>This is video picker</h1>
+    <section>
+        <h1>This is video picker</h1>
+        <slot></slot>
+
+    </section>
 </template>
 
 <script>
