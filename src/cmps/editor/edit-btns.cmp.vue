@@ -6,12 +6,13 @@
 </template>
 
 <script>
-import textEditor from '@/cmps/editor/text-editor.cmp.vue'
+import textControls from '@/cmps/editor/controls/text-controls.cmp.vue'
+import sectionControls from '@/cmps/editor/controls/section-controls.cmp.vue'
 export default {
     name: 'add-btns',
     data() {
         return {
-            currEditor: 'text',
+            currEditor: 'section',
             editors: [
                 'text',
                 'section',
@@ -22,11 +23,12 @@ export default {
     },
     computed: {
         editorName() {
-            return this.currEditor + '-editor'
+            return this.currEditor + '-controls'
         }
     },
     components: {
-        textEditor
+        textControls,
+        sectionControls
     }
 }
 </script>
