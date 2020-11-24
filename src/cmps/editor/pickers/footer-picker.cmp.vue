@@ -1,5 +1,8 @@
 <template>
-    <h1>Footer picker</h1>
+    <section>
+        <h1>Footer picker</h1>
+        <slot></slot>
+    </section>
 </template>
 
 <script>

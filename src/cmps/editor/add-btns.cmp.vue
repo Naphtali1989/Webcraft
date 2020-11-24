@@ -1,12 +1,17 @@
 <template>
     <section class="add-btns">
         <h1>This is add mode</h1>
-        <div class="element-picker-container">
+        <div class="element-picker-container" v-if="!selectedElem">
             <button v-for="elem in elements" :key="elem" @click="togglePicker(elem)">
                 {{elem}}
             </button>
         </div>
-        <component :is="selectedElem"></component>
+        <keep-alive>
+
+            <component :is="selectedElem" v-if="selectedElem">
+                <slot><span><i class="fas fa-arrow-left" @click="selectedElem = ''"></i></span></slot>
+            </component>
+        </keep-alive>
     </section>
 </template>
 
@@ -55,8 +60,9 @@ export default {
 <style lang="scss">
 .element-picker-container {
     display: grid;
-    grid-gap: 5px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 100px);
+    justify-content: center;
     button {
         font-family: cursive;
         padding: 0.5rem 1rem;
@@ -66,8 +72,13 @@ export default {
         text-transform: uppercase;
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.26);
         background-color: hsla(0, 0%, 100%, 0.67);
+        text-align: center;
+        transition: 0.3s ease;
         &.selected {
             background: red;
+        }
+        &:hover {
+            transform: scale(1.1);
         }
     }
 }

@@ -1,6 +1,7 @@
 <template>
     <section>
         <h1>Text picker</h1>
+        <slot></slot>
     </section>
 </template>
 
