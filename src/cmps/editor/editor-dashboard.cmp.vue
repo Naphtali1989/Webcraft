@@ -22,9 +22,8 @@ export default {
     name: 'editor-dashboard',
     data() {
         return {
-            isEditMode: false,
             currTab: 'add',
-            tabs: ['edit','add']
+            tabs: ['add','edit']
         }
     },
     methods: {
@@ -59,6 +58,7 @@ export default {
         background: transparent;
         border: 0;
         outline: 0;
+        text-transform: uppercase;
 
         &.selected {
             background: red;
