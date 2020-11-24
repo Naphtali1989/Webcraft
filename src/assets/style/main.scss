@@ -8,5 +8,9 @@
 @import './basic/layout';
 @import './basic/helpers';
 //Cmps
-@import './cmps/_app-header';
+@import './cmps/app-header';
+@import './cmps/wap-list';
+@import './cmps/wap-preview';
+//Views
 @import './views/editor';
+@import './views/wap-page';
