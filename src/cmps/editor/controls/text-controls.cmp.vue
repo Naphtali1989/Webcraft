@@ -1,5 +1,5 @@
 <template>
-    <section class="text-editor">
+    <section class="text-controls">
         <my-select :options="fonts" />
         <p class="editor-txt">Font Size</p>
         <my-range :options="{ initVal: 16, min: 1, max: 72 }" />

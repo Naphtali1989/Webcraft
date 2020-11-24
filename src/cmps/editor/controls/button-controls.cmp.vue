@@ -1,11 +1,16 @@
 <template>
-    <section class="text-editor">
+    <section class="button-controls">
+        <div class="editor-link-container">
+            <p class="editor-txt">Attach a link to this button:</p>
+            <input type="text" placeholder="Insert a link" />
+            <i class="fas fa-link"></i>
+        </div>
         <my-select :options="fonts" />
-        <p class="text-editor-txt">Font Size</p>
+        <p class="editor-txt">Font Size</p>
         <my-range :options="{ initVal: 16, min: 1, max: 72 }" />
-        <p class="text-editor-txt">Line Height</p>
+        <p class="editor-txt">Line Height</p>
         <my-range :options="{ initVal: 4, min: 1, max: 15 }" />
-        <p class="text-editor-txt">Letter Spacing</p>
+        <p class="editor-txt">Letter Spacing</p>
         <my-range :options="{ initVal: 10, min: 1, max: 30 }" />
         <div class="align-controls">
             <button class="btn align-btn">
@@ -29,7 +34,7 @@
                 <i class="fas fa-bold"></i>
             </button>
         </div>
-        <p class="text-editor-txt">Background Color</p>
+        <p class="editor-txt">Background Color</p>
         <color-picker />
     </section>
 </template>
@@ -39,7 +44,7 @@ import mySelect from '@/cmps/custum-cmps/my-select.cmp.vue';
 import myRange from '@/cmps/custum-cmps/my-range.cmp.vue';
 import colorPicker from '@/cmps/editor/color-picker.cmp.vue';
 export default {
-    name: 'text-controls',
+    name: 'button-controls',
     data() {
         return {
             fonts: [{
