@@ -1,6 +1,7 @@
 <template>
-    <section class="sample-hero flex column" :class="info.class" :style="containerStyle">
-        <h1 class="sample-hero-heading" :class="info.children.h1.class" :style="headingStyle">{{info.children.h1.txt}}</h1>
+    <section class="sample-hero flex column" :class="info.class" :style="info.style">
+        <!-- <component :is="" v-for=""/> -->
+        <h1 class="sample-hero-heading" :class="info.children.h1.class" :style="info.style">{{info.children.h1.txt}}</h1>
         <p class="wap-hero-txt" :class="info.children.p.class" :style="txtStyle">{{info.children.p.txt}}</p>
         <a class="wap-hero-btn" :class="info.children.link.class" :style="linkStyle" :href="info.children.link.href">{{info.children.link.txt}}</a>
     </section>
@@ -12,37 +13,7 @@ export default {
     name: 'sample-hero',
     props: {
         info: Object
-    },
-    computed: {
-        containerStyle() {
-            const { background,height,color }=this.info.style
-            return `background:${background};height:${height};color:${color}`
-        },
-        headingStyle() {
-            const { backgroundColor,fontSize,lineHeight,letterSpacing,color }=this.info.children.h1.style
-            return `backgroundColor:${backgroundColor};
-                    fontSize:${fontSize};
-                    lineHeight:${lineHeight};
-                    letterSpacing:${letterSpacing};
-                    color:${color};`
-        },
-        txtStyle() {
-            const { backgroundColor,fontSize,lineHeight,letterSpacing,color }=this.info.children.p.style
-            return `backgroundColor:${backgroundColor};
-                    fontSize:${fontSize};
-                    lineHeight:${lineHeight};
-                    letterSpacing:${letterSpacing};
-                    color:${color};`
-        },
-
-        linkStyle() {
-            const { backgroundColor,fontSize,lineHeight,letterSpacing,color }=this.info.children.link.style
-            return `backgroundColor:${backgroundColor};
-                    fontSize:${fontSize};
-                    lineHeight:${lineHeight};
-                    letterSpacing:${letterSpacing};
-                    color:${color};`
-        }
     }
+
 }
 </script>
