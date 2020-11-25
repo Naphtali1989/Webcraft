@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import textEditor from '@/cmps/editor/controls/text-editor.cmp.vue';
-import sectionEditor from '@/cmps/editor/controls/section-editor.cmp.vue';
+import textEditor from '@/cmps/editor/editors/text-editor.cmp.vue';
+import sectionEditor from '@/cmps/editor/editors/section-editor.cmp.vue';
 export default {
     name: 'editors-container',
     data() {

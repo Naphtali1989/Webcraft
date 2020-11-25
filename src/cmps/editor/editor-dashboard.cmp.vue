@@ -56,7 +56,7 @@ export default {
     button {
         font-family: monospace;
         width: 50%;
-        // padding: 0.5rem 1rem;
+        padding: 0.5rem 1rem;
         background: transparent;
         border: 0;
         outline: 0;
