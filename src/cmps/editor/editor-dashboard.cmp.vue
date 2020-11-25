@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import editBtns from '@/cmps/editor/edit-btns.cmp.vue';
+import editorsContainer from '@/cmps/editor/editors-container.cmp.vue';
 import typeList from '@/cmps/editor/type-list.cmp.vue';
 
 
@@ -40,13 +40,13 @@ export default {
             return { selected: this.currTab===tabName }
         },
         currDashboard() {
-            if(this.currTab==='edit') return 'edit-btns';
+            if(this.currTab==='edit') return 'editors-container';
             return 'type-list'
         }
     },
     components: {
         typeList,
-        editBtns
+        editorsContainer
     }
 }
 </script>
