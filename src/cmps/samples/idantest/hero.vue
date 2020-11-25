@@ -24,7 +24,6 @@
         <div class="intro-images">
             <img src="@/assets/img/splash.svg" alt="" class="splash">
             <img src="@/assets/img/me.svg" class="me" />
-
         </div>
         <footer class="main-footer">
             <h3>Dev Name goes here</h3>

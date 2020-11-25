@@ -16,27 +16,38 @@ export default {
             currCmpToEdit: null
         }
     },
+    computed: {
+        editType() {
+            return this.$store.getters.editType;
+        }
+    },
     components: {
         editorDashboard,
         editorWorkspace
     },
     methods: {
-        customFind(parents,idToFind) {
-            const res=parents.find(parent => {
-                console.log('Whos youre daddy?',parent,parent.id===idToFind)
-                if(parent.id===idToFind) return true;
-                else if(parent.children) {
-                    return this.customFind(parent.children,idToFind);
+        findByIdRecursive(nodes,id) {
+            for(let i=0;i<nodes.length;i++) {
+                const child=nodes[i];
+                if(child.id===id) {
+                    return child;
+                } else {
+                    if(child.children) {
+                        const found=this.findByIdRecursive(child.children,id);
+                        if(found) {
+                            return found;
+                        }
+                    }
                 }
-            });
-            return res;
+            }
         },
         setCmpToEdit(id) {
-            var cmpToEdit=this.customFind(this.cmps,id);
-            console.log('YESH PO INYAN!',cmpToEdit)
+            var cmpToEdit=this.findByIdRecursive(this.cmps,id);
+            this.currCmpToEdit=cmpToEdit;
+            console.log('YESH PO INYAN!',this.currCmpToEdit)
+            this.$store.commit({ type: 'setEditType',editType: this.currCmpToEdit.type });
         }
     },
-
     created() {
         this.cmps=[{
             id: Math.random().toString(36).substring(2,8),
@@ -51,7 +62,7 @@ export default {
                 id: Math.random().toString(36).substring(2,8),
                 type: "txt",
                 class: "h1-heading",
-                txt: "this is h1",
+                txt: "MATAN THIS SHIT MAYBE WORKS",
                 style: {
                     fontSize: "25px",
                     lineHeight: "1.5",

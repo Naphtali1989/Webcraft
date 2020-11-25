@@ -12,7 +12,6 @@
         </div>
     </section>
 </template>
-
 <script>
 
 import sampleList from '@/cmps/editor/sample-list.cmp.vue';

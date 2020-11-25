@@ -5,7 +5,7 @@
             Logo
         </div>
         <div class="nav-links">
-            <router-link to="/">Link 1</router-link>
+            <router-link to="/editor">Link 1</router-link>
             <router-link to="/">Link 2</router-link>
             <router-link to="/">Link 3</router-link>
         </div>
