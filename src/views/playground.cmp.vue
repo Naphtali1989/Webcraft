@@ -1,8 +1,8 @@
 <template>
     <section>
         <!-- <hero /> -->
-        <header-sample />
-        <!-- <grid-sample /> -->
+        <!-- <header-sample /> -->
+        <grid-sample />
     </section>
 </template>
 

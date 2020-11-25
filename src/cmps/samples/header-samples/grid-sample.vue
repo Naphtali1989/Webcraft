@@ -1,5 +1,5 @@
 <template>
-    <section class="grid-container">
+    <section class="gallery">
         <img class="gallery1" src="@/assets/img/gallery-1.jpg">
         <img class="gallery2" src="@/assets/img/gallery-2.jpg">
         <img class="gallery3" src="@/assets/img/gallery-3.jpg">
@@ -13,5 +13,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.gallery {
+    display: grid;
+}
 </style>
