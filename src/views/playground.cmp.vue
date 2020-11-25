@@ -3,7 +3,7 @@
         <!-- <hero /> -->
         <!-- <header-sample /> -->
         <!-- <grid-sample /> -->
-        <!-- <navbar-sample /> -->
+        <navbar-sample />
     </section>
 </template>
 
