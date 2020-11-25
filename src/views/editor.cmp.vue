@@ -13,7 +13,8 @@ export default {
     data() {
         return {
             cmps: null,
-            currCmpToEdit: null
+            currCmpToEdit: null,
+            currWep: null
         }
     },
     computed: {
