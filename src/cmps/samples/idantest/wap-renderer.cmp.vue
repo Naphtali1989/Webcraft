@@ -21,7 +21,6 @@
 
 <script>
 import googleMap from '@/cmps/samples/google-map.cmp.vue';
-import cardSection from '@/cmps/samples/card-section.cmp.vue';
 export default {
     name: 'wap-renderer',
     props: {
@@ -62,7 +61,6 @@ export default {
     },
     components:{
         googleMap,
-        cardSection
     },
     
 
