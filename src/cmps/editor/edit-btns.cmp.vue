@@ -1,7 +1,7 @@
 <template>
     <section class="edit-btns">
         <h1>{{ editorName }} editor</h1>
-        <component :is="currEditorName" :/>
+        <component :is="currEditorName" />
     </section>
 </template>
 
@@ -17,9 +17,9 @@ export default {
     },
     computed: {
         currEditorName() {
-            return this.currEditor + '-editor';
+            return this.currEditor+'-editor';
         },
-        editorName(){
+        editorName() {
             if(this.currEditor==='img') return 'Image';
             return this.currEditor;
         }
