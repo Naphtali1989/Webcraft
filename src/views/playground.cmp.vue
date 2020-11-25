@@ -1,15 +1,17 @@
 <template>
     <section>
-        <header-sample />
+        <hero />
     </section>
 </template>
 
 <script>
 import headerSample from '@/cmps/samples/header-samples/header-sample.vue';
+import hero from '@/cmps/samples/header-samples/hero.vue';
 export default {
     name: 'playground',
     components: {
-        headerSample
+        headerSample,
+        hero
 
     }
 }

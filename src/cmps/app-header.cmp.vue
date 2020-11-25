@@ -1,7 +1,7 @@
 <template>
     <section class="app-header">
         <div class="logo">
-            <img src="@/assets/img/logo1.png" alt="" class="app-logo">
+            <!-- <img src="@/assets/img/logo1.png" alt="" class="app-logo"> -->
             Logo
         </div>
         <div class="nav-links">
