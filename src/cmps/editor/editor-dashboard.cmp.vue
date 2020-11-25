@@ -17,7 +17,9 @@
 
 <script>
 import editBtns from '@/cmps/editor/edit-btns.cmp.vue';
-import addBtns from '@/cmps/editor/add-btns.cmp.vue';
+import typeList from '@/cmps/editor/type-list.cmp.vue';
+
+
 export default {
     name: 'editor-dashboard',
     data() {
@@ -39,11 +41,11 @@ export default {
         },
         currDashboard() {
             if(this.currTab==='edit') return 'edit-btns';
-            return 'add-btns'
+            return 'type-list'
         }
     },
     components: {
-        addBtns,
+        typeList,
         editBtns
     }
 }
