@@ -3,7 +3,7 @@ import vueRouter from 'vue-router';
 
 import homePage from '@/views/home.cmp.vue';
 import editor from '@/views/editor.cmp.vue';
-import wapPage from '@/views/wap-page.cmp.vue';
+import wapGallery from '@/views/wap-gallery.cmp.vue';
 import userProfile from '@/views/user-profile.cmp.vue';
 import playGround from '@/views/playground.cmp.vue';
 import wap from '@/views/wap.cmp.vue';
@@ -20,7 +20,7 @@ const routes = [{
     },
     {
         path: '/wap',
-        component: wapPage
+        component: wapGallery
     },
     {
         path: '/user/:id',

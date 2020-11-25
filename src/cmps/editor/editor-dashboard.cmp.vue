@@ -53,7 +53,7 @@ export default {
     display: flex;
     width: 100%;
     button {
-        font-family: cursive;
+        font-family: monospace;
         width: 50%;
         padding: 0.5rem 1rem;
         background: transparent;

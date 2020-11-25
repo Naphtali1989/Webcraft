@@ -1,5 +1,5 @@
 <template>
-    <div class="wap-container">
+    <div class="wap-container grid">
         <wap-preview v-for="wap in waps" :key="wap._id" :wap="wap">
         </wap-preview>
     </div>
