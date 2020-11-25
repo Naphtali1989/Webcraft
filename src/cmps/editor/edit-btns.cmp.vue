@@ -14,7 +14,7 @@ export default {
     name: 'add-btns',
     data() {
         return {
-            currEditor: 'img',
+            currEditor: 'button',
             editors: [
                 'text',
                 'section',
