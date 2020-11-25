@@ -51,6 +51,7 @@ export default {
 <style lang="scss">
 .tab-container {
     display: flex;
+    width: 100%;
     button {
         font-family: cursive;
         width: 50%;
