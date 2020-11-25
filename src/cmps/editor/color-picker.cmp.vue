@@ -28,7 +28,6 @@ export default {
     },
     methods: {
         colorSelected(color) {
-            if(color==='transparent') return;
             return { selected: this.selectedColor===color }
         },
         showMore() {
