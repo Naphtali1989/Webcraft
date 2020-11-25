@@ -1,13 +1,15 @@
 <template>
     <section>
         <!-- <hero /> -->
-        <header-sample />
+        <!-- <header-sample /> -->
         <!-- <grid-sample /> -->
+        <!-- <navbar-sample /> -->
     </section>
 </template>
 
 <script>
 import headerSample from '@/cmps/samples/header-samples/header-sample.vue';
+import navbarSample from '@/cmps/samples/header-samples/navbar-sample.cmp.vue';
 import hero from '@/cmps/samples/header-samples/hero.vue';
 import gridSample from '@/cmps/samples/header-samples/grid-sample.vue';
 
@@ -17,8 +19,8 @@ export default {
     components: {
         headerSample,
         hero,
-        gridSample
-
+        gridSample,
+        navbarSample
 
     }
 }
