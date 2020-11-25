@@ -8,13 +8,24 @@
         max-height: 380px;
         font-size: 1.2rem;
         position: relative;
+        cursor: pointer;
+
+
+        &:hover {
+            .wap-prev-controls {
+                opacity: 1;
+            }
+        }
         img {
             height: 21.25rem;
             width: 100%;
+            object-fit: cover
+            
         }
         h3 {
             height: 2.5rem;
-            margin: 0;
+            text-transform: capitalize;
+          
         }
         .wap-prev-controls {
             position: absolute;
@@ -22,8 +33,15 @@
             left: 50%;
             transform: translate(-50%, -50%);
             opacity: 0;
-            &:hover {
-                opacity: 1;
+            transition: .5s ease;
+            backface-visibility: hidden;
+            >* {
+                padding: 0.5rem;
+                margin-inline-start: 5px;
+                margin-inline-end: 5px;
+                color: white;
+                font-size: 2rem;
             }
+
         }
     }

@@ -1,11 +1,11 @@
 <template>
     <section>
         <div class="wap-preview">
-            <h3>{{ wap.title }}</h3>
+            <h3 class="wap-title">{{ wap.title }}</h3>
             <img :src="wap.imgUrl" />
-            <div class="wap-prev-controls">
-                <button >save</button>
-                <button >edit</button>
+            <div class="wap-prev-controls flex place-center">
+                <span><i class="fas fa-eye"></i></span>
+                <span><i class="fas fa-pen"></i></span>
             </div>
         </div>
     </section>
