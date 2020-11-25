@@ -21,24 +21,24 @@ export default {
         editorWorkspace
     },
     methods: {
-        customFind(parents, idToFind) {
-            const res = parents.find(parent => {
-                console.log('Whos youre daddy?',parent, parent.id === idToFind)
-                if (parent.id === idToFind) return true;
-                else if (parent.children) {
-                    return this.customFind(parent.children, idToFind);
+        customFind(parents,idToFind) {
+            const res=parents.find(parent => {
+                console.log('Whos youre daddy?',parent,parent.id===idToFind)
+                if(parent.id===idToFind) return true;
+                else if(parent.children) {
+                    return this.customFind(parent.children,idToFind);
                 }
             });
             return res;
         },
         setCmpToEdit(id) {
-            var cmpToEdit = this.customFind(this.cmps, id);
-            console.log('YESH PO INYAN!', cmpToEdit)
+            var cmpToEdit=this.customFind(this.cmps,id);
+            console.log('YESH PO INYAN!',cmpToEdit)
         }
     },
 
     created() {
-        this.cmps = [{
+        this.cmps=[{
             id: Math.random().toString(36).substring(2,8),
             type: "section",
             class: "flex column justify-center align-center",
