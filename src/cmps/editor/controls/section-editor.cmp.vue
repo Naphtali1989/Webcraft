@@ -1,9 +1,11 @@
 <template>
-    <section class="section-controls">
+    <section class="section-editor">
         <p class="editor-txt">Set Round Edges:</p>
         <my-range :options="{ initVal: 2, min: 0, max: 50 }" />
-        <p class="editor-txt">Set A Background Color</p>
-        <color-picker />
+        <template v-if="type === 'section'">
+            <p class="editor-txt">Set A Background Color</p>
+            <color-picker />
+        </template>
 
         <p class="editor-txt">Or Add An Image As A Background</p>
         <div class="img-uploader">
@@ -19,24 +21,27 @@
 import myRange from '@/cmps/custum-cmps/my-range.cmp.vue';
 import colorPicker from '@/cmps/editor/color-picker.cmp.vue';
 export default {
-    name: 'section-controls',
+    name: 'section-editor',
+    props: {
+        type: String
+    },
     data() {
         return {
 
         }
     },
-    methods:{
+    methods: {
         async onUpladImg(ev) {
-        //     this.$store.commit({
-        //         type:'setIsLoading',
-        //         isLoading: true
-        //     })
-        //     const imgUrl = await uploadImg(ev)
-        //     this.toyToEdit.imgUrl = imgUrl.url
-        //     this.$store.commit({
-        //         type:'setIsLoading',
-        //         isLoading: false
-        //     })
+            //     this.$store.commit({
+            //         type:'setIsLoading',
+            //         isLoading: true
+            //     })
+            //     const imgUrl = await uploadImg(ev)
+            //     this.toyToEdit.imgUrl = imgUrl.url
+            //     this.$store.commit({
+            //         type:'setIsLoading',
+            //         isLoading: false
+            //     })
         }
     },
     components: {
