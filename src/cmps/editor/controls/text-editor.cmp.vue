@@ -1,6 +1,6 @@
 <template>
-    <section class="button-controls">
-        <div class="editor-link-container">
+    <section class="text-editor">
+        <div class="editor-link-container" v-if="type==='button'">
             <p class="editor-txt">Attach a link to this button:</p>
             <input type="text" placeholder="Insert a link" />
             <i class="fas fa-link"></i>
@@ -44,7 +44,7 @@ import mySelect from '@/cmps/custum-cmps/my-select.cmp.vue';
 import myRange from '@/cmps/custum-cmps/my-range.cmp.vue';
 import colorPicker from '@/cmps/editor/color-picker.cmp.vue';
 export default {
-    name: 'button-controls',
+    name: 'text-editor',
     data() {
         return {
             fonts: [{
