@@ -10,7 +10,7 @@
         </section>
         <section class="editor-body">
             <!-- The relevant editing component will go here -->
-            <component :is="currDashboard" />
+            <component :is="currDashboard" :cmpToEdit="cmpToEdit" />
         </section>
     </section>
 </template>
@@ -21,6 +21,14 @@ import typeList from '@/cmps/editor/type-list.cmp.vue';
 
 export default {
     name: 'editor-dashboard',
+    props: {
+        cmpToEdit: {
+            type: Object
+        },
+        // startEdit: {
+        //     type: String
+        // }
+    },
     data() {
         return {
             currTab: 'add',

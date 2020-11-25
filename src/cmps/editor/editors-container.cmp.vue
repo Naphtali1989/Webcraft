@@ -1,18 +1,23 @@
 <template>
     <section class="editors-container">
         <h1>{{ editorName }} editor</h1>
-        <component :is="currEditorName" />
+        <component :is="currEditorName" :cmpToEdit="cmpToEdit" />
     </section>
 </template>
 
 <script>
-import textEditor from '@/cmps/editor/editors/text-editor.cmp.vue';
+import txtEditor from '@/cmps/editor/editors/txt-editor.cmp.vue';
 import sectionEditor from '@/cmps/editor/editors/section-editor.cmp.vue';
 export default {
     name: 'editors-container',
+    props: {
+        cmpToEdit: {
+            type: Object
+        }
+    },
     data() {
         return {
-            currEditor: 'text',
+            currEditor: 'txt'
         }
     },
     computed: {
@@ -24,8 +29,11 @@ export default {
             return this.currEditor;
         }
     },
+    created() {
+        if(this.cmpToEdit) this.currEditor=this.cmpToEdit.type;
+    },
     components: {
-        textEditor,
+        txtEditor,
         sectionEditor,
     }
 }

@@ -1,6 +1,6 @@
 <template>
     <section class="editor-container flex column">
-        <editor-dashboard />
+        <editor-dashboard :cmpToEdit="currCmpToEdit" />
         <editor-workspace :cmps="cmps" @clicked="setCmpToEdit" />
     </section>
 </template>
@@ -14,7 +14,7 @@ export default {
         return {
             cmps: null,
             currCmpToEdit: null,
-            currWep: null
+            currWap: null
         }
     },
     computed: {
@@ -46,7 +46,7 @@ export default {
             var cmpToEdit=this.findByIdRecursive(this.cmps,id);
             this.currCmpToEdit=cmpToEdit;
             console.log('YESH PO INYAN!',this.currCmpToEdit)
-            this.$store.commit({ type: 'setEditType',editType: this.currCmpToEdit.type });
+            // this.$store.commit({ type: 'setEditType',editType: this.currCmpToEdit.type });
         }
     },
     created() {

@@ -1,8 +1,8 @@
 <template>
     <section class="text-editor">
-        <div class="editor-link-container" v-if="type==='button'">
+        <div class="editor-link-container" v-if="showLink">
             <p class="editor-txt">Attach a link to this button:</p>
-            <input type="text" placeholder="Insert a link" />
+            <input type="text" placeholder="Insert a link" v-model="cmpToEdit.href" />
             <i class="fas fa-link"></i>
         </div>
         <my-select :options="fonts" />
@@ -44,27 +44,41 @@ import mySelect from '@/cmps/custum-cmps/my-select.cmp.vue';
 import myRange from '@/cmps/custum-cmps/my-range.cmp.vue';
 import colorPicker from '@/cmps/editor/color-picker.cmp.vue';
 export default {
+    props: {
+        cmpToEdit: {
+            type: Object
+        }
+    },
     name: 'text-editor',
     data() {
         return {
             fonts: [{
                 label: 'Arial',
                 value: 'Arial'
-            }, {
+            },{
                 label: 'Helvetica',
                 value: 'Helvetica'
-            }, {
+            },{
                 label: 'Georgia',
                 value: 'Georgia'
-            }, {
+            },{
                 label: 'Monospace',
                 value: 'Monospace'
-            }, {
+            },{
                 label: 'Cursive',
                 value: 'Cursive'
             },],
+            // cmp: null
         }
     },
+    computed: {
+        showLink() {
+            return this.cmpToEdit.type==='link'
+        }
+    },
+    // created() {
+    //     this.cmp=this.cmpToEdit;
+    // },
     components: {
         mySelect,
         myRange,
