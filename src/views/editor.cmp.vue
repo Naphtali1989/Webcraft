@@ -54,8 +54,10 @@ export default {
             id: Math.random().toString(36).substring(2,8),
             type: "section",
             class: "flex column justify-center align-center",
+            color: "#222",
             style: {
-                background: "url(https://images.unsplash.com/photo-1529271208007-f3a35808467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80) center / cover no-repeat",
+                // background: "url(https://images.unsplash.com/photo-1529271208007-f3a35808467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80) center / cover no-repeat",
+                background: "gray",
                 color: "red",
                 height: "33%"
             },
@@ -66,10 +68,13 @@ export default {
                 txt: "MATAN THIS SHIT MAYBE WORKS",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     backgroundColor: "",
-                    color: 'red'
+                    color: 'red',
+                    fontFamily: 'monospace',
+                    textDecoration: 'underline',
+                    fontStyle: 'italic'
                 }
             },
             {
@@ -79,10 +84,13 @@ export default {
                 txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur quo dolorem itaque voluptas ab!",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     backgroundColor: "",
-                    color: 'red'
+                    color: 'red',
+                    fontFamily: 'cursive',
+                    textDecoration: 'underline',
+                    fontStyle: 'italic'
                 },
             },
             {
@@ -93,10 +101,13 @@ export default {
                 href: "https://www.google.com/",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     color: 'red',
-                    backgroundColor: ""
+                    backgroundColor: "",
+                    fontFamily: 'cursive',
+                    textDecoration: 'underline',
+                    fontStyle: 'italic'
                 }
             }]
         },
@@ -104,9 +115,11 @@ export default {
             id: Math.random().toString(36).substring(2,8),
             type: "section",
             class: "flex column justify-center align-center",
+            color: "#222",
             style: {
-                background: "url(https://images.unsplash.com/photo-1529271208007-f3a35808467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80) center / cover no-repeat",
-                color: "red",
+                // background: "url(https://images.unsplash.com/photo-1529271208007-f3a35808467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80) center / cover no-repeat",
+                background: "gray",
+                color: "#222",
                 height: "300px"
             },
             children: [{
@@ -116,10 +129,11 @@ export default {
                 txt: "this is h1",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     backgroundColor: "",
-                    color: 'red'
+                    color: "#222",
+                    fontFamily: 'cursive'
                 }
             },
             {
@@ -129,10 +143,11 @@ export default {
                 txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur quo dolorem itaque voluptas ab!",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     backgroundColor: "",
-                    color: 'red'
+                    color: "#222",
+                    fontFamily: 'cursive'
                 }
             },
             {
@@ -143,10 +158,11 @@ export default {
                 href: "https://www.google.com/",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
-                    color: 'red',
-                    backgroundColor: ""
+                    color: "#222",
+                    backgroundColor: "",
+                    fontFamily: 'cursive'
                 }
             }]
         },
@@ -155,8 +171,9 @@ export default {
             type: "section",
             class: "flex column justify-center align-center",
             style: {
-                background: "url(https://images.unsplash.com/photo-1529271208007-f3a35808467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80) center / cover no-repeat",
-                color: "red",
+                // background: "url(https://images.unsplash.com/photo-1529271208007-f3a35808467b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=943&q=80) center / cover no-repeat",
+                background: "gray",
+                color: "#222",
                 height: "300px"
             },
             children: [{
@@ -166,10 +183,11 @@ export default {
                 txt: "this is h1",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     backgroundColor: "",
-                    color: 'red'
+                    color: 'red',
+                    fontFamily: 'cursive'
                 }
             },
             {
@@ -179,10 +197,11 @@ export default {
                 txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur quo dolorem itaque voluptas ab!",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     backgroundColor: "",
-                    color: 'red'
+                    color: 'red',
+                    fontFamily: 'cursive'
                 }
             },
             {
@@ -193,10 +212,11 @@ export default {
                 href: "https://www.google.com/",
                 style: {
                     fontSize: "25px",
-                    lineHeight: "1.5",
+                    lineHeight: 1.5,
                     letterSpacing: "10px",
                     color: 'red',
-                    backgroundColor: ""
+                    backgroundColor: "",
+                    fontFamily: 'cursive'
                 }
             }]
 
