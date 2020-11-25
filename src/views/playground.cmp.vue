@@ -2,7 +2,8 @@
     <section>
         <!-- <hero /> -->
         <!-- <header-sample /> -->
-        <grid-sample />
+        <!-- <grid-sample /> -->
+        <grid-card />
     </section>
 </template>
 
@@ -10,6 +11,8 @@
 import headerSample from '@/cmps/samples/header-samples/header-sample.vue';
 import hero from '@/cmps/samples/header-samples/hero.vue';
 import gridSample from '@/cmps/samples/header-samples/grid-sample.vue';
+import gridCard from '@/cmps/samples/header-samples/grid-card.cmp.vue';
+
 
 // import GridSample from '../cmps/samples/header-samples/grid-sample.vue';
 export default {
@@ -17,13 +20,10 @@ export default {
     components: {
         headerSample,
         hero,
-        gridSample
+        gridSample,
+        gridCard
 
 
     }
 }
 </script>
-
-<sty
-        GridSamplele>
-</style>

@@ -6,15 +6,16 @@
                 {{type}}
             </button>
         </div>
-        <sample-picker v-if="selectedType" :samples="samples">
-            <slot><span><i class="fas fa-arrow-left" @click="selectedType = ''"></i></span></slot>
-        </sample-picker>
+        <div>
+            <span v-if="selectedType"><i class="fas fa-arrow-left" @click="selectedType = ''"></i></span>
+            <sample-list :samples="samples" />
+        </div>
     </section>
 </template>
 
 <script>
 
-import samplePicker from '@/cmps/editor/sample-picker.cmp.vue';
+import sampleList from '@/cmps/editor/sample-list.cmp.vue';
 export default {
     name: 'type-list',
     props: {
@@ -40,7 +41,7 @@ export default {
         }
     },
     components: {
-        samplePicker
+        sampleList
     }
 }
 </script>

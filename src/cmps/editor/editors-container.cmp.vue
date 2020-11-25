@@ -1,5 +1,5 @@
 <template>
-    <section class="edit-btns">
+    <section class="editors-container">
         <h1>{{ editorName }} editor</h1>
         <component :is="currEditorName" />
     </section>
@@ -9,7 +9,7 @@
 import textEditor from '@/cmps/editor/controls/text-editor.cmp.vue';
 import sectionEditor from '@/cmps/editor/controls/section-editor.cmp.vue';
 export default {
-    name: 'add-btns',
+    name: 'editors-container',
     data() {
         return {
             currEditor: 'text',

@@ -19,7 +19,6 @@
 import editorsContainer from '@/cmps/editor/editors-container.cmp.vue';
 import typeList from '@/cmps/editor/type-list.cmp.vue';
 
-
 export default {
     name: 'editor-dashboard',
     data() {
@@ -57,11 +56,12 @@ export default {
     button {
         font-family: monospace;
         width: 50%;
-        padding: 0.5rem 1rem;
+        // padding: 0.5rem 1rem;
         background: transparent;
         border: 0;
         outline: 0;
         text-transform: uppercase;
+        padding: 1rem;
 
         &.selected {
             background: red;
