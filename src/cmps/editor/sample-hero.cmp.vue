@@ -1,8 +1,8 @@
 <template>
-    <section class="sample-hero flex" :class="info.class" :style="containerStyle">
+    <section class="sample-hero flex column" :class="info.class" :style="containerStyle">
         <h1 class="sample-hero-heading" :class="info.children.h1.class" :style="headingStyle">{{info.children.h1.txt}}</h1>
-        <!-- <p class="wap-hero-txt" :class="info.children.p.class" :style="txtStyle" />
-        <a class="wap-hero-btn" :class="info.children.link.class" :style="linkStyle" href="info.children.link.href" /> -->
+        <p class="wap-hero-txt" :class="info.children.p.class" :style="txtStyle">{{info.children.p.txt}}</p>
+        <a class="wap-hero-btn" :class="info.children.link.class" :style="linkStyle" :href="info.children.link.href">{{info.children.link.txt}}</a>
     </section>
 
 </template>
@@ -15,21 +15,33 @@ export default {
     },
     computed: {
         containerStyle() {
-            const { background,height }=this.info.style
-            return `background:${background};height:${height};`
+            const { background,height,color }=this.info.style
+            return `background:${background};height:${height};color:${color}`
         },
         headingStyle() {
-            const { backgroundColor,fontSize,lineHeight,letterSpacing }=this.info.children.h1.style
-            return `backgroundColor:${backgroundColor};fontSize:${fontSize};lineHeight:${lineHeight};letterSpacing:${letterSpacing};`
+            const { backgroundColor,fontSize,lineHeight,letterSpacing,color }=this.info.children.h1.style
+            return `backgroundColor:${backgroundColor};
+                    fontSize:${fontSize};
+                    lineHeight:${lineHeight};
+                    letterSpacing:${letterSpacing};
+                    color:${color};`
         },
         txtStyle() {
-            const { backgroundColor,fontSize,lineHeight,letterSpacing }=this.info.children.p.style
-            return `backgroundColor:${backgroundColor};fontSize:${fontSize};lineHeight:${lineHeight};letterSpacing:${letterSpacing};`
+            const { backgroundColor,fontSize,lineHeight,letterSpacing,color }=this.info.children.p.style
+            return `backgroundColor:${backgroundColor};
+                    fontSize:${fontSize};
+                    lineHeight:${lineHeight};
+                    letterSpacing:${letterSpacing};
+                    color:${color};`
         },
 
         linkStyle() {
-            const { backgroundColor,fontSize,lineHeight,letterSpacing }=this.info.children.link.style
-            return `backgroundColor:${backgroundColor};fontSize:${fontSize};lineHeight:${lineHeight};letterSpacing:${letterSpacing};`
+            const { backgroundColor,fontSize,lineHeight,letterSpacing,color }=this.info.children.link.style
+            return `backgroundColor:${backgroundColor};
+                    fontSize:${fontSize};
+                    lineHeight:${lineHeight};
+                    letterSpacing:${letterSpacing};
+                    color:${color};`
         }
     }
 }

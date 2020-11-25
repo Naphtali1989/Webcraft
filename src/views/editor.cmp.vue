@@ -37,10 +37,34 @@ export default {
                             class: "h1-heading",
                             txt: "this is h1",
                             style: {
-                                fontSize: "20px",
+                                fontSize: "25px",
                                 lineHeight: "1.5",
                                 letterSpacing: "10px",
-                                backgroundColor: "red"
+                                backgroundColor: "",
+                                color: 'white'
+                            }
+                        },
+                        p: {
+                            class: "hero-p",
+                            txt: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur quo dolorem itaque voluptas ab!",
+                            style: {
+                                fontSize: "25px",
+                                lineHeight: "1.5",
+                                letterSpacing: "10px",
+                                backgroundColor: "",
+                                color: 'white'
+                            }
+                        },
+                        link: {
+                            class: "hero-link",
+                            txt: "CLICK ME!",
+                            href: "https://www.google.com/",
+                            style: {
+                                fontSize: "25px",
+                                lineHeight: "1.5",
+                                letterSpacing: "10px",
+                                color: 'white',
+                                backgroundColor: ""
                             }
                         }
                     }
