@@ -1,10 +1,13 @@
 <template>
     <component
+        class="editable"
         :is="type"
         :style="cmp.style"
         :class="cmp.class"
         @click.stop.prevent="onClick(cmp.id)"
         @clicked="onClick"
+        @blur="updateTxt"
+        :contenteditable="notSection"
     >
         {{ cmpTxt }}
         <template v-if="cmp.children">
@@ -50,6 +53,10 @@ export default {
                 return `https://www.youtube.com/embed/${id}`;
             }
             return this.cmp.vidUrl
+        },
+        notSection(){
+            if (this.cmp.type !== 'section') return true;
+            return false 
         }
     },
     methods: {
@@ -60,6 +67,10 @@ export default {
             // if (this.$el.localName !== 'button' && this.$el.localName !== 'a') return
             //  window.location.href = this.$el.href
             this.$emit('clicked', id)
+        },
+        updateTxt(ev){
+        console.log('ev:', ev)
+        // console.log('this:', this)
         }
     },
     components: {

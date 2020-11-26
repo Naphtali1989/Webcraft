@@ -45,9 +45,10 @@ export default {
         setCmpToEdit(id) {
             var cmpToEdit=this.findByIdRecursive(this.cmps,id);
             this.currCmpToEdit=cmpToEdit;
-            console.log('YESH PO INYAN!',this.currCmpToEdit)
+            // console.log('YESH PO INYAN!',this.currCmpToEdit)
             // this.$store.commit({ type: 'setEditType',editType: this.currCmpToEdit.type });
-        }
+        },
+        
     },
     created() {
         this.cmps=[{
