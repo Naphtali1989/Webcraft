@@ -15,8 +15,8 @@
                 v-for="child in cmp.children"
                 :key="child._uid"
                 :cmp="child"
-                 @clicked="onClick"
-                 @updatedTxt="emitUpdateTxt"
+                @clicked="onClick"
+                @updatedTxt="emitUpdateTxt"
             />
         </template>
     </component>
@@ -48,7 +48,7 @@ export default {
         },
         urlSrc() {
             return (this.template.imgUrl) ? this.template.imgUrl : ((this.template.vidUrl) ? this.convertedUrl : '');
-        }, 
+        },
         convertedUrl() {
             if (this.cmp.vidUrl.includes("?v=")) {
                 const id = this.cmp.vidUrl.split("?v=")[1];
@@ -56,9 +56,9 @@ export default {
             }
             return this.cmp.vidUrl
         },
-        notSection(){
-            if (this.cmp.type !== 'section') return true;
-            return false 
+        notSection() {
+            if (this.cmp.type !== 'section' || this.cmp.type !== 'img') return true;
+            return false
         }
     },
     methods: {
@@ -70,12 +70,12 @@ export default {
             //  window.location.href = this.$el.href
             this.$emit('clicked', id)
         },
-        updateTxt(ev){
+        updateTxt(ev) {
             this.$emit('updatedTxt', ev.target.innerText)
-        // console.log('this:', this)
+            // console.log('this:', this)
         },
-        emitUpdateTxt(txtValue){
-        console.log('value:', txtValue)
+        emitUpdateTxt(txtValue) {
+            console.log('value:', txtValue)
             this.$emit('updatedTxt', txtValue)
         }
     },
