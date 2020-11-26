@@ -1,7 +1,13 @@
 <template>
     <section class="editors-container">
         <h1>{{ editorName }} editor</h1>
-        <component :is="currEditorName" :cmpToEdit="cmpToEdit" v-if="cmpToEdit" @updated="emitUpdated"/>
+        <component
+            :is="currEditorName"
+            :cmpToEdit="cmpToEdit"
+            v-if="cmpToEdit"
+            @updated="emitUpdated"
+            @uploading="emitUploadImg"
+        />
     </section>
 </template>
 
@@ -22,20 +28,23 @@ export default {
     },
     computed: {
         currEditorName() {
-            return this.currEditor+'-editor';
+            return this.currEditor + '-editor';
         },
         editorName() {
-            if(this.currEditor==='img') return 'Image';
+            if (this.currEditor === 'img') return 'Image';
             return this.currEditor;
         }
     },
-    methods:{
-        emitUpdated(updatedCmp){
+    methods: {
+        emitUpdated(updatedCmp) {
             this.$emit('updated', updatedCmp);
-        }
+        },
+        emitUploadImg(ev) {
+            this.$emit('uploading', ev)
+        },
     },
     updated() {
-        if (this.cmpToEdit && (this.cmpToEdit.type==='txt' || this.cmpToEdit.type ==='link')) this.currEditor = 'text'
+        if (this.cmpToEdit && (this.cmpToEdit.type === 'txt' || this.cmpToEdit.type === 'link')) this.currEditor = 'text'
         else this.currEditor = 'section'
     },
     components: {

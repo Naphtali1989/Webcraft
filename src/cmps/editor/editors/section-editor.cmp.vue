@@ -2,7 +2,7 @@
     <section class="section-editor">
         <p class="editor-txt">Set Round Edges:</p>
         <my-range :options="{ initVal: 2, min: 0, max: 50 }" />
-        <template v-if="type === 'section'">
+        <template v-if="cmpToEdit.type === 'section'">
             <p class="editor-txt">Set A Background Color</p>
             <color-picker />
         </template>
@@ -11,7 +11,7 @@
         <div class="img-uploader">
             <label class="user-input input-file"
                 ><i class="fas fa-cloud-upload-alt"></i>
-                <input class="hide" type="file" @change="onUpladImg" />
+                <input class="hide" type="file" @change="emitUploadImg" />
             </label>
         </div>
     </section>
@@ -23,7 +23,9 @@ import colorPicker from '@/cmps/editor/color-picker.cmp.vue';
 export default {
     name: 'section-editor',
     props: {
-        type: String
+       cmpToEdit: {
+            type: Object
+        }
     },
     data() {
         return {
@@ -31,7 +33,8 @@ export default {
         }
     },
     methods: {
-        async onUpladImg(ev) {
+        emitUploadImg(ev) {
+            this.$emit('uploading', ev)
             //     this.$store.commit({
             //         type:'setIsLoading',
             //         isLoading: true

@@ -133,12 +133,12 @@ export default {
         }
 
     },
-    // watch: {
-    //     'cmpToEdit.style.textAlign'(to, from) {
-    //         console.log('updated now!', to, from)
-    //         this.$emit('updated', this.cmpToEdit);
-    //     }
-    // },
+    watch: {
+        'cmpToEdit.txt'(to, from) {
+            console.log('updated now!', to, from)
+            this.$emit('updated', this.cmpToEdit);
+        }
+    },
     computed: {
         showLink() {
             return this.cmpToEdit.type === 'link'
@@ -157,9 +157,7 @@ export default {
         // },
 
     },
-    // created() {
-    //     this.cmp=this.cmpToEdit;
-    // },
+
     components: {
         mySelect,
         myRange,

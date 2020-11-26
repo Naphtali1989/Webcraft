@@ -16,7 +16,12 @@
         </section>
         <section class="editor-body">
             <!-- The relevant editing component will go here -->
-            <component :is="currDashboard" :cmpToEdit="cmpToEdit" @updated="emitUpdate"/>
+            <component
+                :is="currDashboard"
+                :cmpToEdit="cmpToEdit"
+                @updated="emitUpdate"
+                @uploading="emitUploadImg"
+            />
         </section>
     </section>
 </template>
@@ -46,7 +51,11 @@ export default {
             console.log('tab:', tab)
             this.currTab = tab;
         },
-        emitUpdate(updatedCmp){
+        emitUploadImg(ev){
+            console.log('in the dashboard', ev)
+            this.$emit('uploading', ev)
+        },
+        emitUpdate(updatedCmp) {
             this.$emit('updated', updatedCmp);
         }
     },
@@ -57,12 +66,13 @@ export default {
         },
         currDashboard() {
             if (this.currTab === 'edit') return 'editors-container';
-            return 'type-list'
+            return 'type-list';
         }
     },
-    updated() {
-        if (this.cmpToEdit) this.currTab = 'edit';
-    },
+    // updated() {
+    //     if (this.cmpToEdit && this.currTab==='add') this.currTab = 'edit';
+    //     else if (this.cmpToEdit) this.currTab = 'add'
+    // },
     components: {
         typeList,
         editorsContainer
