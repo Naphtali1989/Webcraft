@@ -16,6 +16,7 @@
                 :key="child._uid"
                 :cmp="child"
                  @clicked="onClick"
+                 @updatedTxt="emitUpdateTxt"
             />
         </template>
     </component>
@@ -47,7 +48,8 @@ export default {
         },
         urlSrc() {
             return (this.template.imgUrl) ? this.template.imgUrl : ((this.template.vidUrl) ? this.convertedUrl : '');
-        }, convertedUrl() {
+        }, 
+        convertedUrl() {
             if (this.cmp.vidUrl.includes("?v=")) {
                 const id = this.cmp.vidUrl.split("?v=")[1];
                 return `https://www.youtube.com/embed/${id}`;
@@ -69,8 +71,12 @@ export default {
             this.$emit('clicked', id)
         },
         updateTxt(ev){
-        console.log('ev:', ev)
+            this.$emit('updatedTxt', ev.target.innerText)
         // console.log('this:', this)
+        },
+        emitUpdateTxt(txtValue){
+        console.log('value:', txtValue)
+            this.$emit('updatedTxt', txtValue)
         }
     },
     components: {

@@ -1,8 +1,13 @@
 <template>
-    <section class='editor-workspace flex column'>
+    <section class="editor-workspace flex column">
         <!-- <component :is="cmp.type" v-for="(cmp,idx) in cmps" :key="idx" :info="cmp.info" /> -->
-        <wap-worker v-for="(cmp,idx) in cmps" :key="idx" :cmp="cmp" @clicked="emitUserChoice" />
-
+        <wap-worker
+            v-for="(cmp, idx) in cmps"
+            :key="idx"
+            :cmp="cmp"
+            @clicked="emitUserChoice"
+            @updatedTxt="emitUpdateTxt"
+        />
     </section>
 </template>
 
@@ -22,8 +27,12 @@ export default {
     },
     methods: {
         emitUserChoice(id) {
-            console.log('This is in work space!',id)
-            this.$emit('clicked',id)
+            console.log('This is in work space!', id)
+            this.$emit('clicked', id)
+        },
+        emitUpdateTxt(txtValue) {
+            console.log('value:', txtValue)
+            this.$emit('updatedTxt', txtValue)
         }
     }
 }

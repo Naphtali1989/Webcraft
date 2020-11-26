@@ -5,7 +5,10 @@
             @updated="updateCmpToShow"
             @uploading="uploadImg"
         />
-        <editor-workspace :cmps="cmps" @clicked="setCmpToEdit" />
+        <editor-workspace :cmps="cmps" @clicked="setCmpToEdit" @updatedTxt="updateTxt"/>
+        <!-- <component :is="currCmp.type" :info="currCmp.info">
+            <component :is="child.type" v-for="child in info" :key="child.id"/>
+        </component> -->
     </section>
 </template>
 
@@ -58,6 +61,10 @@ export default {
         },
         uploadImg(ev){
             console.log('in editor', ev)
+        },
+        updateTxt(txtValue){
+            console.log('We are in editr:', txtValue)
+            this.currCmpToEdit.txt = txtValue;
         }
 
     },
