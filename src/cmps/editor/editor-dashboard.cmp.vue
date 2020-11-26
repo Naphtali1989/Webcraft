@@ -2,15 +2,21 @@
     <section class="editor-dashboard">
         <section class="editor-nav flex">
             <div class="tab-container">
-                <button v-for="tab in tabs" :key="tab" @click="toggleTabs(tab)" :class="{selected: currTab === tab}" class="tab-item">
-                    {{tab}}
+                <button
+                    v-for="tab in tabs"
+                    :key="tab"
+                    @click="toggleTabs(tab)"
+                    :class="{ selected: currTab === tab }"
+                    class="tab-item"
+                >
+                    {{ tab }}
                 </button>
             </div>
             <!-- clicking a button will highlight it  -->
         </section>
         <section class="editor-body">
             <!-- The relevant editing component will go here -->
-            <component :is="currDashboard" :cmpToEdit="cmpToEdit" />
+            <component :is="currDashboard" :cmpToEdit="cmpToEdit" @updated="emitUpdate"/>
         </section>
     </section>
 </template>
@@ -32,24 +38,30 @@ export default {
     data() {
         return {
             currTab: 'add',
-            tabs: ['add','edit']
+            tabs: ['add', 'edit']
         }
     },
     methods: {
         toggleTabs(tab) {
-            console.log('tab:',tab)
-            this.currTab=tab
+            console.log('tab:', tab)
+            this.currTab = tab;
         },
+        emitUpdate(updatedCmp){
+            this.$emit('updated', updatedCmp);
+        }
     },
     computed: {
         selectedTab(tabName) {
-            console.log('tabname:',tabName);
-            return { selected: this.currTab===tabName }
+            console.log('tabname:', tabName);
+            return { selected: this.currTab === tabName };
         },
         currDashboard() {
-            if(this.currTab==='edit') return 'editors-container';
+            if (this.currTab === 'edit') return 'editors-container';
             return 'type-list'
         }
+    },
+    updated() {
+        if (this.cmpToEdit) this.currTab = 'edit';
     },
     components: {
         typeList,

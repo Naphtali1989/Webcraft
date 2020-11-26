@@ -1,6 +1,6 @@
 <template>
     <section class="editor-container flex column">
-        <editor-dashboard :cmpToEdit="currCmpToEdit" />
+        <editor-dashboard :cmpToEdit="currCmpToEdit" @updated="updateCmpToShow"/>
         <editor-workspace :cmps="cmps" @clicked="setCmpToEdit" />
     </section>
 </template>
@@ -48,6 +48,10 @@ export default {
             // console.log('YESH PO INYAN!',this.currCmpToEdit)
             // this.$store.commit({ type: 'setEditType',editType: this.currCmpToEdit.type });
         },
+        updateCmpToShow(updatedCmp){
+            console.log('we have emitted a crime!',updatedCmp)
+            this.currCmpToEdit = updatedCmp
+        }
         
     },
     created() {
@@ -92,7 +96,8 @@ export default {
                     color: 'red',
                     fontFamily: 'cursive',
                     textDecoration: 'underline',
-                    fontStyle: 'italic'
+                    fontStyle: 'italic',
+                    textAlign: 'center'
                 },
             },
             {
