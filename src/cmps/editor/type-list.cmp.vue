@@ -6,8 +6,8 @@
                 {{type}}
             </button>
         </div>
-        <div>
-            <span v-if="selectedType"><i class="fas fa-arrow-left" @click="selectedType = ''"></i></span>
+        <div v-if="selectedType">
+            <span ><i class="fas fa-arrow-left" @click="selectedType = ''"></i></span>
             <sample-list :samples="samples" />
         </div>
     </section>
