@@ -63,7 +63,6 @@ export default {
             console.log('in editor', ev)
         },
         updateTxt(txtValue){
-            console.log('We are in editr:', txtValue)
             this.currCmpToEdit.txt = txtValue;
         }
 

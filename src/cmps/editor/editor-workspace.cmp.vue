@@ -27,12 +27,10 @@ export default {
     },
     methods: {
         emitUserChoice(id) {
-            console.log('This is in work space!', id)
-            this.$emit('clicked', id)
+            this.$emit('clicked', id);
         },
         emitUpdateTxt(txtValue) {
-            console.log('value:', txtValue)
-            this.$emit('updatedTxt', txtValue)
+            this.$emit('updatedTxt', txtValue);
         }
     }
 }

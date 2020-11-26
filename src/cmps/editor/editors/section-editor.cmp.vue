@@ -4,7 +4,7 @@
         <my-range :options="{ initVal: 2, min: 0, max: 50 }" />
         <template v-if="cmpToEdit.type === 'section'">
             <p class="editor-txt">Set A Background Color</p>
-            <color-picker />
+            <color-picker @changeColor="setColor"/>
         </template>
 
         <p class="editor-txt">Or Add An Image As A Background</p>
@@ -45,6 +45,9 @@ export default {
             //         type:'setIsLoading',
             //         isLoading: false
             //     })
+        },
+        setColor(color) {
+            this.cmpToEdit.style.background = color;
         }
     },
     components: {

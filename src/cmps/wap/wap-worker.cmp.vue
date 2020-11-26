@@ -76,7 +76,6 @@ export default {
             // console.log('this:', this)
         },
         emitUpdateTxt(txtValue) {
-            console.log('value:', txtValue)
             this.$emit('updatedTxt', txtValue)
         }
     },

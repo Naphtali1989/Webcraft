@@ -119,26 +119,24 @@ export default {
             else this.cmpToEdit.style.fontWeight = 'normal'
         },
         toggleTextAlign(direction) {
-            console.log('one direction?', this.cmpToEdit.style['textAlign'])
             this.cmpToEdit.style.textAlign = direction;
         },
         setColor(color) {
-            console.log('color is:', color);
-            const { type } = this.cmpToEdit
-            if (type === 'section') this.cmpToEdit.style.background = color
-            else if (type === 'txt' || type === 'link') {
+            // const { type } = this.cmpToEdit
+            // if (type === 'section') this.cmpToEdit.style.background = color
+            // else if (type === 'txt' || type === 'link') {
                 this.cmpToEdit.style.color = color;
                 // this.cmpToEdit.style.backgroundColor=color;
-            }
+            // }
         }
 
     },
-    watch: {
-        'cmpToEdit.txt'(to, from) {
-            console.log('updated now!', to, from)
-            this.$emit('updated', this.cmpToEdit);
-        }
-    },
+    // watch: {
+    //     'cmpToEdit.txt'(to, from) {
+    //         console.log('updated now!', to, from)
+    //         this.$emit('updated', this.cmpToEdit);
+    //     }
+    // },
     computed: {
         showLink() {
             return this.cmpToEdit.type === 'link'
