@@ -30,12 +30,12 @@
             <button class="btn align-btn" @click="toggleFontStyle('italic')">
                 <i class="fas fa-italic"></i>
             </button>
-            <button class="btn align-btn" @click="toggleFontStyle('bold')">
+            <button class="btn align-btn" @click="toggleFontWeight('bold')">
                 <i class="fas fa-bold"></i>
             </button>
         </div>
         <p class="editor-txt">Background Color</p>
-        <color-picker />
+        <color-picker @changeColor="setColor" />
     </section>
 </template>
 
@@ -95,10 +95,23 @@ export default {
         toggleFontStyle(txtStyle) {
             const { fontStyle }=this.cmpToEdit.style;
             if(fontStyle===txtStyle) this.cmpToEdit.style.fontStyle='revert'
-            else this.cmpToEdit.style.fontStyle=fontStyle
-            // if(fontStyle===decoration) this.cmpToEdit.style.fontStyle='revret'
-            // else this.cmpToEdit.fontStyle=decoration
+            else this.cmpToEdit.style.fontStyle=txtStyle
+        },
+        toggleFontWeight(weight) {
+            const { fontWeight }=this.cmpToEdit.style;
+            if(fontWeight!==weight) this.cmpToEdit.style.fontWeight=weight
+            else this.cmpToEdit.style.fontWeight='normal'
+        },
+        setColor(color) {
+            console.log('color is:',color);
+            const { type }=this.cmpToEdit
+            if(type==='section') this.cmpToEdit.style.background=color
+            else if(type==='txt'||type==='link') {
+                this.cmpToEdit.style.color=color;
+                // this.cmpToEdit.style.backgroundColor=color;
+            }
         }
+
     },
     computed: {
         showLink() {

@@ -74,7 +74,8 @@ export default {
                     color: 'red',
                     fontFamily: 'monospace',
                     textDecoration: 'underline',
-                    fontStyle: 'italic'
+                    fontStyle: 'italic',
+                    fontWeight: 'bold'
                 }
             },
             {
