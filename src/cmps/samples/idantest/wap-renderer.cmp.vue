@@ -29,6 +29,9 @@ export default {
             required: true
         }
     },
+    data(){
+        return {}
+    },
     mounted() {
         if (this.template.imgUrl || this.template.vidUrl){
             this.$el.src = this.urlSrc
