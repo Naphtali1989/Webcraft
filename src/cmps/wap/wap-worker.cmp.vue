@@ -57,7 +57,7 @@ export default {
             return this.cmp.vidUrl
         },
         notSection() {
-            if (this.cmp.type !== 'section' || this.cmp.type !== 'img') return true;
+            if (this.cmp.type !== 'section' && this.cmp.type !== 'img') return true;
             return false
         }
     },
@@ -71,6 +71,7 @@ export default {
             this.$emit('clicked', id)
         },
         updateTxt(ev) {
+            if(this.cmp.type==='img') return
             this.$emit('updatedTxt', ev.target.innerText)
             // console.log('this:', this)
         },
