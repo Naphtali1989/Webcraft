@@ -31,8 +31,8 @@ export default {
             return this.currEditor + '-editor';
         },
         editorName() {
-            if (this.currEditor === 'img') return 'Image';
-            return this.currEditor;
+            if (this.cmpToEdit.type === 'img') return 'Image';
+            return this.cmpToEdit.type;
         }
     },
     methods: {
